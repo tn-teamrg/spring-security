@@ -16,6 +16,7 @@
 
 package org.springframework.security.saml2.provider.service.web;
 
+import io.github.pixee.security.Newlines;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -87,7 +88,7 @@ public final class Saml2MetadataFilter extends OncePerRequestFilter {
 		String fileName = this.metadataFilename.replace("{registrationId}", registrationId);
 		String encodedFileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8.name());
 		String format = "attachment; filename=\"%s\"; filename*=UTF-8''%s";
-		response.setHeader(HttpHeaders.CONTENT_DISPOSITION, String.format(format, fileName, encodedFileName));
+		response.setHeader(HttpHeaders.CONTENT_DISPOSITION, Newlines.stripAll(String.format(format, fileName, encodedFileName)));
 		response.setContentLength(metadata.length());
 		response.getWriter().write(metadata);
 	}
