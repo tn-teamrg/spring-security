@@ -305,8 +305,8 @@ public abstract class AbstractRememberMeServices
 		}
 		String paramValue = request.getParameter(parameter);
 		if (paramValue != null) {
-			if (paramValue.equalsIgnoreCase("true") || paramValue.equalsIgnoreCase("on")
-					|| paramValue.equalsIgnoreCase("yes") || paramValue.equals("1")) {
+			if ("true".equalsIgnoreCase(paramValue) || "on".equalsIgnoreCase(paramValue)
+					|| "yes".equalsIgnoreCase(paramValue) || "1".equals(paramValue)) {
 				return true;
 			}
 		}

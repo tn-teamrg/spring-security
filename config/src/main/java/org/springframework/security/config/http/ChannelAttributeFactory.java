@@ -43,13 +43,13 @@ public final class ChannelAttributeFactory {
 
 	public static List<ConfigAttribute> createChannelAttributes(String requiredChannel) {
 		String channelConfigAttribute;
-		if (requiredChannel.equals(OPT_REQUIRES_HTTPS)) {
+		if (OPT_REQUIRES_HTTPS.equals(requiredChannel)) {
 			channelConfigAttribute = "REQUIRES_SECURE_CHANNEL";
 		}
-		else if (requiredChannel.equals(OPT_REQUIRES_HTTP)) {
+		else if (OPT_REQUIRES_HTTP.equals(requiredChannel)) {
 			channelConfigAttribute = "REQUIRES_INSECURE_CHANNEL";
 		}
-		else if (requiredChannel.equals(OPT_ANY_CHANNEL)) {
+		else if (OPT_ANY_CHANNEL.equals(requiredChannel)) {
 			channelConfigAttribute = ChannelDecisionManagerImpl.ANY_CHANNEL;
 		}
 		else {

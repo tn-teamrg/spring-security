@@ -468,7 +468,7 @@ public class JdbcMutableAclService extends JdbcAclService implements MutableAclS
 		super.setAclClassIdSupported(aclClassIdSupported);
 		if (aclClassIdSupported) {
 			// Change the default insert if it hasn't been overridden
-			if (this.insertClass.equals(DEFAULT_INSERT_INTO_ACL_CLASS)) {
+			if (DEFAULT_INSERT_INTO_ACL_CLASS.equals(this.insertClass)) {
 				this.insertClass = DEFAULT_INSERT_INTO_ACL_CLASS_WITH_ID;
 			}
 			else {

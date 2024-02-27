@@ -97,7 +97,7 @@ public final class StrictTransportSecurityServerHttpHeadersWriter implements Ser
 
 	private boolean isSecure(ServerWebExchange exchange) {
 		String scheme = exchange.getRequest().getURI().getScheme();
-		boolean isSecure = scheme != null && scheme.equalsIgnoreCase("https");
+		boolean isSecure = scheme != null && "https".equalsIgnoreCase(scheme);
 		return isSecure;
 	}
 
